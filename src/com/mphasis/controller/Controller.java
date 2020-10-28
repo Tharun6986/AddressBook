@@ -80,16 +80,11 @@ public class Controller {
            System.out.println("open or create addressbook to use saveas functionality");
            Main.mainmenu();
        }
-       if(addressbook.getSaved().equalsIgnoreCase("yes")){
-           System.out.println("there is nonthing to save");
-           Main.mainmenu();
-       }
-       else {
        addressbook.setSaved("yes");
        Addressbookservices addressbookservices=new Addressbookservices();
        addressbookservices.saveAs(addressbook.getaddressbookname(),addressbook);
        System.out.println("saved details sucessfully");
-       Main.mainmenu();}
+       Main.mainmenu();
    }
    /*Functionality:To save a addressbook*/
    public static void save(){

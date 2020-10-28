@@ -78,8 +78,8 @@ public class Addressbookservices {
                 {
                     //Save the employee details in Employee object
                     Person person = new Person(personDetails[0],
-                            personDetails[1],personDetails[2],personDetails[3],Integer.valueOf(personDetails[4]),
-                            Integer.valueOf(personDetails[5]));
+                            personDetails[1],personDetails[2],personDetails[3],Integer.parseInt(personDetails[4]),
+                            Long.parseLong(personDetails[5]));
                     personList.add(person);
                 }
             }
@@ -152,7 +152,7 @@ public class Addressbookservices {
         File oldfile=new File(OldPATH);
         System.out.println("enter the name of addressbook want to save as:");
         Scanner scanner=new Scanner(System.in);
-        String newaddressbookname=scanner.nextLine();
+        String newaddressbookname=scanner.nextLine()+".csv";
         String NewPATH="C:\\Users\\Srikar\\IdeaProjects\\Addressbook\\src\\com\\mphasis\\data"+"\\"+newaddressbookname;
         File newfile=new File(NewPATH);
         oldfile.renameTo(newfile);
